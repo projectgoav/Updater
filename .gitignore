@@ -57,3 +57,13 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+# =================
+# Updater Files
+# =================
+*.jar
+lib/
+help/
+Matrixonator/
+*.project
+*.classpath
