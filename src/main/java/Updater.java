@@ -9,6 +9,7 @@ import java.nio.channels.ReadableByteChannel;
 
 public class Updater {
 
+  
   /**
    * Utility program to download a Matrixonator update from the given location. The program will
    * keep a backup of the old, working version at Marixonator-O.jar
@@ -20,7 +21,7 @@ public class Updater {
     // Check we have the right number of args
     if (args.length != 1) {
       System.out.println("Invalid number of args given.");
-    } else {
+    } else {     
       // Pause for a bit before starting. Allow Matrixonator to close! :)
       try {
         Thread.sleep(2500);
@@ -32,7 +33,8 @@ public class Updater {
       String path = args[0];
       System.out.println("Matrixonator - Updater");
       System.out.println("Downloading update from > " + path);
-
+      
+      
       try {
         URL website = new URL(path);
         ReadableByteChannel rbc = Channels.newChannel(website.openStream());
@@ -85,7 +87,7 @@ public class Updater {
       System.out.println("Update complete!");
       System.out.println("Starting Matrixonator...");
       try {
-        Runtime.getRuntime().exec("java -jar Matrixonator.jar");
+        Runtime.getRuntime().exec("java -jar Matrixonator.jar update");
       } catch (IOException e) {
         // TODO Auto-generated catch block
         e.printStackTrace();
